@@ -100,7 +100,9 @@ volume:
   card: 'PULSE'
   delay: 0.18
   enabled: false
-  icon: ''
+  volume_icons: ['']
+  muted_icon: 'muted'
+  show_text: true
 
 
 spotify:

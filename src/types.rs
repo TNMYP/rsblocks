@@ -61,7 +61,8 @@ pub struct Disk {
 }
 #[derive(Clone)]
 pub struct Volume {
-    pub icon: String,
+    pub icons: Vec<String>,
+    pub show_text: bool,
     pub enabled: bool,
     pub delay: f64,
     pub card: String,

@@ -27,7 +27,21 @@ pub async fn get_volume() -> ThreadsData {
         raw_volume -= min;
         ((raw_volume as f64 / range as f64) * 100.) as u64
     };
+    
+    let icons_amount = CONFIG.volume.icons.len() as u64;
+    let interval: f64 = 100.0 / icons_amount as f64;
+    let mut selected_icon  = (vol as f64 / interval) as u64;
+    if selected_icon >= icons_amount {
+        selected_icon = icons_amount - 1;
+    }
+    
+    let icon = &CONFIG.volume.icons[selected_icon as usize];
+    let mut data = String::new();
 
-    let data = format!("  {}  {}%  {}", CONFIG.volume.icon, vol, CONFIG.seperator);
+    match CONFIG.volume.show_text {
+        false => data = format!("  {}  {}%  {}", icon, vol, CONFIG.seperator),
+        true => data = format!("  {}  {}", icon, CONFIG.seperator),
+    }
+
     ThreadsData::Sound(data)
 }
