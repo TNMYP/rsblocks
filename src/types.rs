@@ -78,7 +78,7 @@ pub struct Weather {
 
 #[derive(Clone)]
 pub struct Battery {
-    pub icon: String,
+    pub icon: Vec<String>,
     pub enabled: bool,
     pub delay: f64,
 }

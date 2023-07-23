@@ -3,7 +3,7 @@ use std::default::Default;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Battery {
-    pub icon: String,
+    pub icon: Vec<String>,
     pub enabled: bool,
     pub delay: f64,
 }
@@ -11,7 +11,7 @@ pub struct Battery {
 impl Default for Battery {
     fn default() -> Self {
         Battery {
-            icon: String::from(""),
+            icon: vec![String::from("")],
             enabled: false,
             delay: 120.0,
         }

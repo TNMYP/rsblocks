@@ -63,7 +63,7 @@ disk:
 battery:
   delay: 120.0
   enabled: false
-  icon: ''
+  icon: ['', '1']
   
 
 cpu_temperature:
