@@ -24,13 +24,11 @@ pub async fn get_battery() -> ThreadsData {
         return ThreadsData::Battery(String::from("Cannot Read Battery!"));
     };
     
-    let icons_amount = CONFIG.battery.icon.len();
-    
-    let interval: usize  = 100 / icons_amount;
-    let mut selected_icon  = percentage / interval as f32;
- 
-    if selected_icon >= icons_amount as f32{
-        selected_icon = icons_amount as f32;
+    let icons_amount = CONFIG.volume.icons.len() as u64;
+    let interval: f64 = 100.0 / icons_amount as f64;
+    let mut selected_icon  = (percentage as f64 / interval) as u64;
+    if selected_icon >= icons_amount {
+        selected_icon = icons_amount - 1;
     }
 
     let icon = &CONFIG.battery.icon[selected_icon as usize];
