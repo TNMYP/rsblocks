@@ -27,8 +27,12 @@ pub async fn get_battery() -> ThreadsData {
     let icons_amount = CONFIG.battery.icon.len();
     
     let interval: usize  = 100 / icons_amount;
-    let selected_icon  = percentage / interval as f32;
-    
+    let mut selected_icon  = percentage / interval as f32;
+ 
+    if selected_icon >= icons_amount as f32{
+        selected_icon = icons_amount as f32;
+    }
+
     let icon = &CONFIG.battery.icon[selected_icon as usize];
 
     
