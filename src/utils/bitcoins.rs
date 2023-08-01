@@ -21,6 +21,6 @@ pub async fn get_price() -> ThreadsData {
         Err(_) => _err,
     };
 
-    let data = format!("  {}  {}  {}", CONFIG.bitcoins.icon, res, CONFIG.seperator);
+    let data = format!("{}{}{}", CONFIG.bitcoins.icon, res, CONFIG.seperator);
     ThreadsData::BitCoins(data)
 }

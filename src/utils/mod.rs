@@ -15,3 +15,4 @@ pub mod uptime;
 pub mod volume;
 pub mod weather;
 pub mod nordvpn;
+pub mod language;

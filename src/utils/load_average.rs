@@ -8,7 +8,7 @@ pub async fn get_load_avg() -> ThreadsData {
     unsafe { getloadavg(data.as_mut_ptr(), data.len() as c_int) };
     let [load, _, _] = data;
     let data = format!(
-        "  {}  {:.2}  {}",
+        "{}{:.2}{}",
         CONFIG.loadavg.icon, load, CONFIG.seperator
     );
 

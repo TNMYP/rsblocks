@@ -15,6 +15,7 @@ mod uptime;
 mod volume;
 mod weather;
 mod nordvpn;
+mod language;
 
 use self::battery::Battery;
 use self::mpd::Mpd;
@@ -33,6 +34,7 @@ use uptime::Uptime;
 use volume::Volume;
 use weather::Weather;
 use nordvpn::Nordvpn;
+use language::Language;
 
 use std::default::Default;
 use std::fs::File;
@@ -118,6 +120,9 @@ pub struct Config {
 
     #[serde(default)]
     pub nordvpn: Nordvpn,
+
+    #[serde(default)]
+    pub language: Language,
 }
 
 impl Default for Config {
@@ -141,6 +146,7 @@ impl Default for Config {
             local_ip: Default::default(),
             bitcoins: Default::default(),
             nordvpn: Default::default(),
+            language: Default::default(),
         }
     }
 }

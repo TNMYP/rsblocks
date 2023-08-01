@@ -12,7 +12,7 @@ pub async fn get_disk() -> ThreadsData {
 
     disk_used.push_str(&format!("{}G", used));
     let data = format!(
-        "  {}  {}  {}",
+        "{}{}{}",
         CONFIG.disk.icon, disk_used, CONFIG.seperator
     );
     ThreadsData::Disk(data)

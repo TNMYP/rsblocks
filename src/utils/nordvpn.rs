@@ -44,16 +44,16 @@ pub async fn get_nordvpn() -> ThreadsData {
     if server != "" {
         if CONFIG.nordvpn.showip{
             result = format!(
-                " {} {}@{} {}",
+                "{}{}@{}{}",
                 CONFIG.nordvpn.icon, ip, server, CONFIG.seperator);
         }else{
             result = format!(
-                " {} {} {}",
+                "{}{}{}",
                 CONFIG.nordvpn.icon, country, CONFIG.seperator);
         }
     } else {
         result = format!(
-            " {} {} {}",
+            "{}{}{}",
             CONFIG.nordvpn.icon, "Disconnected", CONFIG.seperator);
     }
     ThreadsData::Nordvpn(result)

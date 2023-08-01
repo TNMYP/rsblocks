@@ -23,6 +23,6 @@ pub async fn get_local_ip() -> ThreadsData {
     if ip.is_empty() {
         ip = String::from("Error!")
     }
-    let data = format!("  {}  {}  {}", CONFIG.local_ip.icon, ip, CONFIG.seperator);
+    let data = format!("{}{}{}", CONFIG.local_ip.icon, ip, CONFIG.seperator);
     ThreadsData::LocalIp(data)
 }

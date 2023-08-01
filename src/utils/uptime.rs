@@ -9,7 +9,7 @@ pub async fn get_uptime() -> ThreadsData {
     } else {
         format!("{} min, {} sec", minutes, seconds)
     };
-    let result = format!("  {}  {}  {}", CONFIG.uptime.icon, uptime, CONFIG.seperator);
+    let result = format!("{}{}{}", CONFIG.uptime.icon, uptime, CONFIG.seperator);
     ThreadsData::Uptime(result)
 }
 

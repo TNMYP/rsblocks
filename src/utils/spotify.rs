@@ -52,7 +52,7 @@ pub async fn get_spotify() -> ThreadsData {
     };
 
     let data = format!(
-        "  {}  {} - {}  {}",
+        "{}{} - {}{}",
         CONFIG.spotify.icon, artist, title, CONFIG.seperator
     );
     ThreadsData::Spotify(data)

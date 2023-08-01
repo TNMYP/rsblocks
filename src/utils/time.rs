@@ -6,7 +6,7 @@ pub async fn get_time() -> ThreadsData {
     let now = Local::now();
 
     let data = format!(
-        "  {}  {}  {}",
+        "{}{}{}",
         CONFIG.time.icon,
         now.format(&CONFIG.time.format),
         CONFIG.seperator

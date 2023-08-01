@@ -39,8 +39,8 @@ pub async fn get_volume() -> ThreadsData {
     let mut data = String::new();
 
     match CONFIG.volume.show_text {
-        false => data = format!("  {}  {}%  {}", icon, vol, CONFIG.seperator),
-        true => data = format!("  {}  {}", icon, CONFIG.seperator),
+        false => data = format!("{}{}%{}", icon, vol, CONFIG.seperator),
+        true => data = format!("{}{}", icon, CONFIG.seperator),
     }
 
     ThreadsData::Sound(data)
