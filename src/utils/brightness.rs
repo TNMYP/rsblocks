@@ -21,7 +21,7 @@ pub async fn get_brightness() -> ThreadsData {
     let value = (current_brightness / max_brightness) * 100.0;
 
     let result = format!(
-        "  {}  {:.0}%  {}",
+        "{}{:.0}%{}",
         CONFIG.brightness.icon, value, CONFIG.seperator
     );
     ThreadsData::Brightness(result)

@@ -25,6 +25,6 @@ pub async fn get_weather() -> ThreadsData {
         Err(_) => err_string,
     };
 
-    let data = format!("  {}  {}  {}", CONFIG.weather.icon, res, CONFIG.seperator);
+    let data = format!("{}{}{}", CONFIG.weather.icon, res, CONFIG.seperator);
     ThreadsData::Weather(data)
 }

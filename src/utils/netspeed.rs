@@ -18,7 +18,7 @@ pub async fn get_netspeed() -> ThreadsData {
     let rx = calculate(rx_bps);
 
     let data = format!(
-        "  {}  {}  {}  {}  {}",
+        "{}{}{}{}{}",
         CONFIG.netspeed.recieve_icon, rx, CONFIG.netspeed.transmit_icon, tx, CONFIG.seperator
     );
     ThreadsData::NetSpeed(data)

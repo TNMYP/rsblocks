@@ -16,7 +16,7 @@ pub async fn get_mpd_current() -> ThreadsData {
     };
 
     let result = format!(
-        "  {}  {}  {}",
+        "{}{}{}",
         CONFIG.mpd.icon, current.file, CONFIG.seperator
     );
 

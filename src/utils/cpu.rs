@@ -12,7 +12,7 @@ pub async fn get_cpu_temp() -> ThreadsData {
     let value = buf.trim().parse::<f32>().unwrap();
 
     let result = format!(
-        "  {}  {}°  {}",
+        "{}{}°{}",
         CONFIG.cpu_temperature.icon,
         value / 1000.0,
         CONFIG.seperator

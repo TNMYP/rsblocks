@@ -56,14 +56,14 @@ pub async fn get_memory() -> ThreadsData {
     let result: String;
     if mem_used > 1000 {
         result = format!(
-            "  {}  {:.1}G  {}",
+            "{}{:.1}G{}",
             CONFIG.memory.icon,
             mem_used as f32 / 1000.0,
             CONFIG.seperator
         );
     } else {
         result = format!(
-            "  {}  {}M  {}",
+            "{}{}M{}",
             CONFIG.memory.icon, mem_used, CONFIG.seperator
         );
     }

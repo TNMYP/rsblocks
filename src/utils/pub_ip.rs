@@ -12,6 +12,6 @@ pub async fn get_pub_ip() -> ThreadsData {
         Err(_) => _err,
     };
 
-    let data = format!("  {}  {}  {}", CONFIG.pub_ip.icon, res, CONFIG.seperator);
+    let data = format!("{}{}{}", CONFIG.pub_ip.icon, res, CONFIG.seperator);
     ThreadsData::PubIp(data)
 }
