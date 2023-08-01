@@ -36,8 +36,8 @@ pub async fn get_battery() -> ThreadsData {
     
 
     let result = format!(
-        "  {}  {:.0}%  {}",
-        icon, percentage, CONFIG.seperator
+        "  {}  {}%  {}",
+        icon, percentage.floor(), CONFIG.seperator
     );
     ThreadsData::Battery(result)
 }
