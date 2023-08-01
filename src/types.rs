@@ -17,6 +17,7 @@ pub enum ThreadsData {
     BitCoins(String),
     Brightness(String),
     Nordvpn(String),
+    Language(String),
 }
 
 #[derive(Clone)]
@@ -37,6 +38,7 @@ pub struct Config {
     pub local_ip: LocalIp,
     pub bitcoins: BitCoins,
     pub brightness: Brightness,
+    pub language: Language,
 }
 
 #[derive(Clone)]
@@ -162,6 +164,12 @@ pub struct Brightness {
 #[derive(Clone)]
 pub struct Nordvpn {
     pub icon: String,
+    pub enabled: bool,
+    pub delay: f64,
+}
+
+#[derive(Clone)]
+pub struct Language {
     pub enabled: bool,
     pub delay: f64,
 }
