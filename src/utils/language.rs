@@ -24,7 +24,7 @@ pub async fn get_language() -> ThreadsData{
         XCloseDisplay(display);
     }
     let data = format!(
-        "{} {}",
+        " {} {}",
         name, CONFIG.seperator
                     );
     ThreadsData::Language(data)
